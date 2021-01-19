@@ -6,7 +6,7 @@ import { getUserProfile } from '../actions/index';
 const About = () => {
 
     const { data, loading } = getUserProfile();
-
+    
     return (
         <BaseLayout user={data} loading={loading}>
             <BasePage>

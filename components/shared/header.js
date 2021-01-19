@@ -75,6 +75,9 @@ const Header = ({ user, loading }) => {
                         <NavItem className="port-navbar-item">
                             <BsNavLink href='/cv' title='CV' />
                         </NavItem>
+                        <NavItem className="port-navbar-item">
+                            <BsNavLink href='/secret' title='Secret' />
+                        </NavItem>
                     </Nav>
                     <NavbarText className="port-navbar-social">
                         <a href="https://linkedin.com/in/olly-bolland/" target="_blank">
