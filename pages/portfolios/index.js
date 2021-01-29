@@ -1,44 +1,32 @@
 import BaseLayout from '../../components/layouts/BaseLayout';
 import BasePage from '../../components/basePage';
-import { getUserProfile } from '../../actions/index';
+import { getUserProfile } from '../../actions/user';
+import dbConnect from '../../db/mongoDBConnect';
+import Portfolio from '../../db/models/portfolio';
+import PortfolioCards from '../../components/portfolioCards';
 
-import Link from 'next/link';
 
-import axios from 'axios';
+const Portfolios = ({ portfolios }) => {
 
-const Portfolios = ({ posts }) => {
-
-    const renderPosts = (posts) => {
-        return (
-            <ul>
-                {posts.map((post) => (
-                    <li key={post.id}>
-                        <Link as={`/portfolios/${post.id}`} href={`/portfolios/[id]`}>
-                            <a>
-                                {post.title}
-                            </a>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        )
-    }
-
-    const { data, loading } = getUserProfile();
+    const { data, userLoading } = getUserProfile();
 
     return (
-        <BaseLayout user={data} loading={loading}>
-            <BasePage>
-                <h1>Portfolios</h1>
-                {renderPosts(posts)}
+        <BaseLayout user={data} userLoading={userLoading}>
+            <BasePage
+            title="See my latest work below"
+            className="portfolio-page">
+                <PortfolioCards portfolios={portfolios} />
             </BasePage>
         </BaseLayout>
     )
 }
 
 export async function getStaticProps(context) {
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
-    return { props: { posts: res.data.slice(0, 10) } }
+    await dbConnect()
+
+    const res = await Portfolio.find({})
+    const portfolios = JSON.parse(JSON.stringify(res))
+    return { props: { portfolios }, revalidate: 1 }
 }
 
 

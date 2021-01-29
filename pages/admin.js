@@ -2,15 +2,15 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/basePage';
 import WithAuth from '../hoc/withAuth';
 
-const Secret = ({ user, userLoading }) => {
+const Admin = ({ user, userLoading }) => {
 
   return (
     <BaseLayout user={user} userLoading={userLoading}>
         <BasePage>
-            <h1>Secret Page: {user.name}</h1>
+            <h1>Admin Page: Hello {user.name}</h1>
         </BasePage>
     </BaseLayout>
   )
 }
 
-export default WithAuth(Secret)();
+export default WithAuth(Admin)('admin');

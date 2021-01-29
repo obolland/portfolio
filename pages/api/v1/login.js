@@ -5,6 +5,6 @@ export default async function login(req, res) {
     await auth0.handleLogin(req, res);
   } catch (error) {
     console.error(error);
-    res.status(error.status || 400).end(error.message);
+    res.status(error.status || 500).end(error.message);
   }
 }

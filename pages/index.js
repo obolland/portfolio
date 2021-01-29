@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import BaseLayout from '../components/layouts/BaseLayout';
-import { getUserProfile } from '../actions/index';
+import { getUserProfile } from '../actions/user';
 
 import { Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
@@ -10,12 +10,13 @@ const ROLES = ['Developer', 'Team Player', 'Innovator', 'Collaborator', 'Communi
 
 const Index = () => {
 
-  const { data, loading } = getUserProfile();
+  const { data, userLoading } = getUserProfile();
 
   return (
     <BaseLayout
       user={data}
-      loading={loading}
+      userLoading={userLoading}
+      navClass="transparent"
       className="cover">
       <Head>
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
@@ -31,7 +32,7 @@ const Index = () => {
                 <div className={`flipper`}>
                   <div className="back">
                     <div className="hero-section-content">
-                      <h2> Full Stack Web Developer </h2>
+                      <h2> React.js Developer </h2>
                       <div className="hero-section-content-intro">
                         Take a look at my portfolio and CV
                       </div>

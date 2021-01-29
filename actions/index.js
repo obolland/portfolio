@@ -1,9 +1,22 @@
+import { useState } from 'react';
 
-import useSWR from 'swr';
+export const useAPIHandler = (apiCall) => {
+  const [reqState, setReqState] = useState({
+    error: null,
+    data: null,
+    loading: false
+  });
 
-export const fetcher = (url) => fetch(url).then(res => res.json());
-
-export const getUserProfile = () => {
-  const { data, error, ...other } = useSWR('/api/v1/userProfile', fetcher);
-  return {data, error, loading: !data && !error, ...other}
+  const handler = async (...data) => {
+    setReqState({error: null, data: null, loading: true});
+    try {
+      const json = await apiCall(...data)
+      setReqState({error: null, data: json.data, loading: false})
+    } catch(err) {
+      console.log(err.response)
+      const errorMessage = (err.response && err.response.data) || "ooops...something went wrong!"
+      setReqState({error: errorMessage, data: null, loading: false})
+    }
+  }
+  return [handler, {...reqState}]
 }

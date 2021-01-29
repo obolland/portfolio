@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
-import { getUserProfile } from '../../actions/index';
+import { getUserProfile } from '../../actions/user';
 
 import {
   Collapse,
@@ -17,7 +17,7 @@ import {
 const BsNavLink = ({ href, title }) => {
     return (
       <Link href={href}>
-        <a className="nav-link port-navbar-link">{title}</a>
+        <a className="navbar-link port-navbar-link">{title}</a>
       </Link>
     )
 }
@@ -32,7 +32,7 @@ const BsNavBrand = () => {
 
 const LoginLogoutLink = ({title, href}) => {
     return (
-        <a href={href} className="navbar-link port-navbar-link clickable">{title}</a>
+        <a href={href} className="navbar-link port-navbar-link login clickable">{title}</a>
     )
 }
 
@@ -44,7 +44,7 @@ const Mailto = ({ email, children }) => {
 //functions end.
 
 
-const Header = ({ user, loading }) => {
+const Header = ({ user, userLoading, className }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -52,8 +52,7 @@ const Header = ({ user, loading }) => {
     return (
         <div>
             <Navbar
-                className="port-navbar port-default absolute"
-                color="transparent"
+                className={`port-navbar port-default absolute ${className}`}
                 dark
                 expand="md">
                 <BsNavBrand />
@@ -76,10 +75,16 @@ const Header = ({ user, loading }) => {
                             <BsNavLink href='/cv' title='CV' />
                         </NavItem>
                         <NavItem className="port-navbar-item">
-                            <BsNavLink href='/secret' title='Secret' />
+                            <BsNavLink href='/admin' title='Admin' />
                         </NavItem>
+                        {/* <NavItem className="port-navbar-item">
+                            <BsNavLink href='/secretssr' title='SecretSSR' />
+                        </NavItem>
+                        <NavItem className="port-navbar-item">
+                            <BsNavLink href='/adminssr' title='AdminSSR' />
+                        </NavItem> */}
                     </Nav>
-                    <NavbarText className="port-navbar-social">
+                    {/* <NavbarText className="port-navbar-social">
                         <a href="https://linkedin.com/in/olly-bolland/" target="_blank">
                             <span className="iconify navbar-social mr-3" data-icon="mdi:linkedin" data-inline="false" />
                         </a>
@@ -89,10 +94,10 @@ const Header = ({ user, loading }) => {
                         <Mailto email="info@ollybolland.com">
                             <span className="iconify navbar-social ml-3" data-icon="mdi:email-outline" data-inline="false" />
                         </Mailto>
-                    </NavbarText>
+                    </NavbarText> */}
                     <Nav navbar>
                         <NavItem className="port-navbar-item ml-4">
-                            {!loading &&
+                            {!userLoading &&
                                 <>
                                     {user.name ?
                                     <LoginLogoutLink href="/api/v1/logout" title="Logout" />
