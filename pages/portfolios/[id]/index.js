@@ -2,7 +2,6 @@ import BaseLayout from "../../../components/layouts/BaseLayout";
 import BasePage from '../../../components/basePage';
 import dbConnect from '../../../db/mongoDBConnect';
 import Portfolio from '../../../db/models/portfolio';
-
 import { getUserProfile } from '../../../actions/user';
 
 const PortfolioId = ({ folio }) => {
@@ -43,7 +42,7 @@ export async function getStaticProps({ params }) {
   const res = await Portfolio.findById(params.id).lean()
   const parsedRes = JSON.parse(JSON.stringify(res))
   // Pass post data to the page via props
-  return { props: { folio: parsedRes } }
+  return { props: { folio: parsedRes }, revalidate: 1 }
 }
 
 export default PortfolioId;

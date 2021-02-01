@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from 'react';
-import SelectDate from '../components/datePicker';
 import DatePicker from "react-datepicker";
 
-const PortfolioForm = ({ onSubmit }) => {
+const PortfolioForm = ({ onSubmit, initialData }) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit, setValue } = useForm({defaultValues: initialData});
 
   useEffect(() => {
     register({name: 'start_date'});
@@ -21,8 +20,9 @@ const PortfolioForm = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="form-group">
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">*Title</label>
         <input
+          required
           ref={register}
           name="title"
           type="text"
@@ -61,8 +61,9 @@ const PortfolioForm = ({ onSubmit }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="tech-stack">Tech Stack</label>
+        <label htmlFor="tech-stack">*Tech Stack</label>
         <input
+          required
           ref={register}
           name="tech_stack"
           type="text"
@@ -71,8 +72,9 @@ const PortfolioForm = ({ onSubmit }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="image-url">Image URL</label>
+        <label htmlFor="image-url">*Image URL</label>
         <input
+          required
           ref={register}
           name="img_url"
           type="text"
@@ -102,8 +104,9 @@ const PortfolioForm = ({ onSubmit }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description">*Description</label>
         <textarea
+          required
           ref={register}
           name="description"
           rows="5"

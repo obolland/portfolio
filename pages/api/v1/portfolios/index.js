@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Portfolio = mongoose.model('Portfolio');
-import auth0 from '../../../utils/auth0';
+import auth0 from '../../../../utils/auth0';
 
 export default async function createPortfolioHandler(req, res) {
 

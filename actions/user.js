@@ -1,7 +1,7 @@
 
-import useSWR from 'swr';
+import { fetcher } from './index';
 
-export const fetcher = (url) => fetch(url).then(res => res.json());
+import useSWR from 'swr';
 
 export const getUserProfile = () => {
   const { data, error, ...other } = useSWR('/api/v1/userProfile', fetcher);

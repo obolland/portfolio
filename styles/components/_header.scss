@@ -11,7 +11,6 @@
   }
 
   .port-navbar {
-
     &-brand {
       color: white;
       font-size: 24px;
@@ -44,7 +43,40 @@
       }
     }
   }
+
+  .port-dropdown-menu {
+    .port-dropdown-item {
+      color: #4e4e4e;
+  
+      &.active {
+        color: #dba919;
+      }
+    }
+  
+    .port-dropdown-toggle {
+      color: white;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
 }
+
+// .port-dropdown-menu {
+//   .port-dropdown-item {
+//     color: #4e4e4e;
+
+//     &.active {
+//       color: #dba919;
+//     }
+//   }
+
+//   .port-dropdown-toggle {
+//     color: white;
+//     margin-left: 10px;
+//     margin-right: 10px;
+//   }
+// }
 
 .navbar-social {
   font-size: 3.5vh;

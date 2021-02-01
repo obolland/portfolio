@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 import { getUserProfile } from '../../actions/user';
+import AdminMenu from '../shared/adminMenu';
 
 import {
   Collapse,
@@ -14,10 +15,11 @@ import {
 } from 'reactstrap';
 
 //functions begin...
-const BsNavLink = ({ href, title }) => {
+
+export const BsNavLink = ({ href, title, className='' }) => {
     return (
       <Link href={href}>
-        <a className="navbar-link port-navbar-link">{title}</a>
+        <a className={`navbar-link port-navbar-link ${className}`}>{title}</a>
       </Link>
     )
 }
@@ -30,17 +32,12 @@ const BsNavBrand = () => {
     )
 }
 
-const LoginLogoutLink = ({title, href}) => {
-    return (
-        <a href={href} className="navbar-link port-navbar-link login clickable">{title}</a>
-    )
-}
-
 const Mailto = ({ email, children }) => {
     return (
       <a href={`mailto:${email}`}>{children}</a>
     );
   };
+
 //functions end.
 
 
@@ -60,9 +57,6 @@ const Header = ({ user, userLoading, className }) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem className="port-navbar-item">
-                            <BsNavLink href='/' title='Home' />
-                        </NavItem>
-                        <NavItem className="port-navbar-item">
                             <BsNavLink href='/about' title='About' />
                         </NavItem>
                         <NavItem className="port-navbar-item">
@@ -73,9 +67,6 @@ const Header = ({ user, userLoading, className }) => {
                         </NavItem>
                         <NavItem className="port-navbar-item">
                             <BsNavLink href='/cv' title='CV' />
-                        </NavItem>
-                        <NavItem className="port-navbar-item">
-                            <BsNavLink href='/admin' title='Admin' />
                         </NavItem>
                         {/* <NavItem className="port-navbar-item">
                             <BsNavLink href='/secretssr' title='SecretSSR' />
@@ -95,17 +86,9 @@ const Header = ({ user, userLoading, className }) => {
                             <span className="iconify navbar-social ml-3" data-icon="mdi:email-outline" data-inline="false" />
                         </Mailto>
                     </NavbarText> */}
-                    <Nav navbar>
+                    <Nav navbar>   
                         <NavItem className="port-navbar-item ml-4">
-                            {!userLoading &&
-                                <>
-                                    {user.name ?
-                                    <LoginLogoutLink href="/api/v1/logout" title="Logout" />
-                                    :
-                                    <LoginLogoutLink href="/api/v1/login" title="Login" />
-                                    }
-                                </>
-                            }
+                            <AdminMenu user={user} userLoading={userLoading}/>
                         </NavItem>
                     </Nav>
                 </Collapse>
