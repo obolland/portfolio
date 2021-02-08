@@ -20,7 +20,7 @@ export default async function handleEditBlog(req, res) {
       if (accessToken) {
         //await dbConnect();
         const updatedBlogRes = await Blog
-        .findOneAndUpdate({_id: id}, body, {new: true, runValidators: true}) //new:true returns the updates portfolio
+        .findOneAndUpdate({_id: id}, body, {new: true, runValidators: true}) //new:true returns the updated blog
         return res.json(updatedBlogRes)
         } else { return }
     break
