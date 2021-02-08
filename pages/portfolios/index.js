@@ -9,8 +9,8 @@ import React, {useEffect} from 'react'
 
 const Portfolios = ({ portfolios }) => {
 
-    useEffect(() => {
-    }, [portfolios])
+    // useEffect(() => {
+    // }, [portfolios])
 
     const { data, userLoading } = getUserProfile();
     return (

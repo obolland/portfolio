@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
-import { getUserProfile } from '../../actions/user';
 import AdminMenu from '../shared/adminMenu';
 
 import {
@@ -11,7 +10,7 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  NavbarText
+//   NavbarText
 } from 'reactstrap';
 
 //functions begin...

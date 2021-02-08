@@ -8,7 +8,7 @@ const About = () => {
     const { data, userLoading } = getUserProfile();
     return (
         <BaseLayout user={data} userLoading={userLoading}>
-            <BasePage>
+            <BasePage title="STUFF ABOUT ME">
                 <h1>About</h1>
             </BasePage>
         </BaseLayout>

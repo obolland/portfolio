@@ -28,6 +28,18 @@ const AdminMenu = ({ user, userLoading }) => {
                           className='port-dropdown-item' />
                   </DropdownItem>
                   <DropdownItem>
+                      <BsNavLink
+                          href='/blogs/editor'
+                          title='Blog Editor'
+                          className='port-dropdown-item' />
+                  </DropdownItem>
+                  <DropdownItem>
+                      <BsNavLink
+                          href='/blogs/dashboard'
+                          title='Dashboard'
+                          className='port-dropdown-item' />
+                  </DropdownItem>
+                  <DropdownItem>
                       {!userLoading &&
                           <>
                               {user.name ?

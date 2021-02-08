@@ -9,7 +9,7 @@ const WithAuth = (Component) => (role) => {
       return <p>Loading...</p>
     }
 
-    //note - replace with useRouter
+    // note - replace with useRouter
     if (!data.name) {
       return <Redirect ssr route='/api/v1/login' />
     } else {

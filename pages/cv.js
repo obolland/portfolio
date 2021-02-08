@@ -9,7 +9,7 @@ const CV = () => {
 
     return (
         <BaseLayout user={data} userLoading={userLoading}>
-            <BasePage>
+            <BasePage title="CV">
                 <h1>CV</h1>
             </BasePage>
         </BaseLayout>
