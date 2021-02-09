@@ -2,10 +2,9 @@ import React, { useRef, useState, useEffect }from 'react';
 import SunEditor, {buttonList} from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 
-const BlogEditorForm = ({saveBlog, initialData}) => {
+const BlogEditorForm = ({saveBlog, initialData, updateBlog }) => {
   const [blogContent, setBlogContent] = useState('')
   const editorRef = useRef();
-
     // useEffect(() => {
     //     // Get underlining core object here
     //     // useEffect is being used to make sure the editor is first being rendered.
@@ -18,9 +17,12 @@ const BlogEditorForm = ({saveBlog, initialData}) => {
       subTitle: '',
       slug: '',
     }
-    
+
     const formData = initialData ? {...initialData} : defaultData
+
     const [form, setForm] = useState(formData)
+
+    const hasContentOnLoad = formData.title ? true : false
     
     const handleEditorChange = (content) => {
       setBlogContent(content)
@@ -29,6 +31,14 @@ const BlogEditorForm = ({saveBlog, initialData}) => {
     const handleInputChange = (event) => {
       const { name, value } = event.target
       setForm({...form, [name]: value})
+    }
+
+    const handleSubmit = (blogContent, form, event) => {  //checking to see if there was already
+      if(hasContentOnLoad){                             //data in the editor upon loading so we know
+          updateBlog(blogContent, form, event)        //whether or not to save a new blog or update existing
+      } else {
+          saveBlog(blogContent, form, event)
+      }
     }
 
   return (
@@ -72,12 +82,12 @@ const BlogEditorForm = ({saveBlog, initialData}) => {
             placeholder="Slug"
             onChange={handleInputChange}
           />
-          <button onClick={(event) => saveBlog(blogContent, form, event)}
+          <button onClick={(event) => handleSubmit(blogContent, form, event)}
             type="submit"
             name="draft"
             className="btn btn-primary mt-4 mr-2">Save as Draft
           </button>
-          <button onClick={(event) => saveBlog(blogContent, form, event)}
+          <button onClick={(event) => handleSubmit(blogContent, form, event)}
             type="submit"
             name="publish"
             className="btn btn-primary mt-4">Publish Blog

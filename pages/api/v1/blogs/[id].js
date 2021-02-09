@@ -11,14 +11,12 @@ export default async function handleEditBlog(req, res) {
 
   switch (req.method) {
     case 'GET':
-      //await dbConnect();
       const blogRes = await Blog.findById(id)
       res.json(blogRes)
     break
 
-    case 'PUT':
+    case 'PATCH':
       if (accessToken) {
-        //await dbConnect();
         const updatedBlogRes = await Blog
         .findOneAndUpdate({_id: id}, body, {new: true, runValidators: true}) //new:true returns the updated blog
         return res.json(updatedBlogRes)
@@ -26,7 +24,6 @@ export default async function handleEditBlog(req, res) {
     break
     case 'DELETE':
       if (accessToken) {
-        //await dbConnect();
         const deleteBlogRes = await Blog.findByIdAndDelete(id)
         return res.json({message: 'Blog '+id+' has been successfully deleted'})
       } else { return }

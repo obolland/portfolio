@@ -1,4 +1,4 @@
-import React, { useRef }from 'react';
+import React, { useRef, useState }from 'react';
 import 'suneditor/dist/css/suneditor.min.css';
 import BaseLayout from '../../../components/layouts/BaseLayout';
 import BasePage from '../../../components/basePage';
@@ -9,8 +9,6 @@ import BlogEditorForm from '../../../components/blogEditorForm';
 
 const BlogEditor = ({user, userLoading}) => {
   const [createBlog, {data: createdBlog, error}] = useCreateBlog()
-
-  const editorRef = useRef();
 
   const saveBlog = async (blogContent, form, event) => {
     if(!blogContent){

@@ -11,14 +11,12 @@ export default async function handleEditPortfolio(req, res) {
 
   switch (req.method) {
     case 'GET':
-      //await dbConnect();
       const portfolioRes = await Portfolio.findById(id)
       res.json(portfolioRes)
     break
 
     case 'PUT':
       if (accessToken) {
-        //await dbConnect();
         const updatedFolioRes = await Portfolio
         .findOneAndUpdate({_id: id}, body, {new: true, runValidators: true}) //new:true returns the updates portfolio
         return res.json(updatedFolioRes)
@@ -26,7 +24,6 @@ export default async function handleEditPortfolio(req, res) {
     break
     case 'DELETE':
       if (accessToken) {
-        //await dbConnect();
         const deleteFolioRes = await Portfolio.findByIdAndDelete(id)
         return res.json({message: 'Portfolio '+id+' has been successfully deleted'})
       } else { return }
@@ -36,3 +33,5 @@ export default async function handleEditPortfolio(req, res) {
       break
   }
 }
+
+// note - portfolios uses PUT and blogs is using PATCH
