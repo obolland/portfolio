@@ -69,3 +69,5 @@ const PortfolioEdit = ({ user, userLoading }) => {
   )
 }
 export default WithAuth(PortfolioEdit)('admin');
+
+// note - stick the get function into actions and import it

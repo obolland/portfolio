@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import { BsNavLink } from '../shared/header';
+import { BsNavLink } from './Header';
 
 import {
   Dropdown,

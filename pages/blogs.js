@@ -10,7 +10,7 @@ const Blogs = ({ blogs }) => {
     const { data, userLoading } = getUserProfile();
     return (
         <BaseLayout user={data} userLoading={userLoading}>
-            <BasePage>
+            <BasePage title="INTRIGUES, FINDINGS & OTHER STUFF">
                 { 
                     blogs.map(blog => {
                         return (

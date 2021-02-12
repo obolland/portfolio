@@ -26,12 +26,12 @@ export async function getStaticPaths() {
   const res = await Portfolio.find({})
   const parsedRes = JSON.parse(JSON.stringify(res))
 
-  // Get the paths we want to pre-render based on portfolios
+  // Get the paths to pre-render based on portfolios
   const paths = parsedRes.map(portfolio => ({
     params: { id: portfolio._id.toString() },
   }))
 
-  // We'll pre-render only these paths at build time.
+  // Pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false }
 }
@@ -42,7 +42,7 @@ export async function getStaticProps({ params }) {
   const res = await Portfolio.findById(params.id).lean()
   const parsedRes = JSON.parse(JSON.stringify(res))
   // Pass post data to the page via props
-  return { props: { folio: parsedRes }, revalidate: 1 }
+  return { props: { folio: parsedRes } }
 }
 
 export default PortfolioId;

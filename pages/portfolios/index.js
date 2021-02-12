@@ -4,13 +4,9 @@ import { getUserProfile } from '../../actions/user';
 import dbConnect from '../../db/mongoDBConnect';
 import Portfolio from '../../db/models/portfolio';
 import PortfolioCards from '../../components/portfolioCards';
-import React, {useEffect} from 'react'
 
 
 const Portfolios = ({ portfolios }) => {
-
-    // useEffect(() => {
-    // }, [portfolios])
 
     const { data, userLoading } = getUserProfile();
     return (
