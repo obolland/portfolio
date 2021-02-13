@@ -1,7 +1,7 @@
 import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/basePage';
 import WithAuth from '../hoc/withAuth';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import Link from 'next/link';
 import { useUpdateBlog, deleteBlog, useGetBlogs } from '../actions/blog';
 import Masthead from '../components/shared/Masthead';
@@ -11,7 +11,6 @@ import { toast } from 'react-toastify';
 const Dashboard = ({user, userLoading}) => {
   const [updateBlog] = useUpdateBlog();
   const {data: blogs = [], blogsLoading, mutate} = useGetBlogs();
-  const buttonProps = { href: '/blogs/editor', text: 'Create a new Blog'}
 
   const changeBlogStatus = async (id, status) => {
     updateBlog(id, {status})
@@ -65,10 +64,13 @@ const Dashboard = ({user, userLoading}) => {
   return (
     <BaseLayout navClass="transparent" user={user} userLoading={userLoading}>
       <Masthead
-          imagePath="/images/home-bg.jpg"
+          // imagePath="/images/home-bg.jpg"
           title="Blogs Dashboard"
           subTitle='Olly, write something good today'
-          buttonProps={buttonProps}
+          button={
+                  <Link href='/blogs/editor'>
+                    <Button color="primary" className="ml-2">Create a new Blog</Button>
+                  </Link>}
       />
       <BasePage className="blog-user-page">
         <Row>

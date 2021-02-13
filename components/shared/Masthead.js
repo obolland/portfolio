@@ -1,8 +1,7 @@
-import { Container, Row, Button } from 'reactstrap';
-import Link from 'next/link'
+import { Container, Row } from 'reactstrap';
 
-const Masthead = ({imagePath, title, subTitle, buttonProps: {href, text}}) =>
-  <div className="masthead" style={{"backgroundImage": `url(${imagePath})`}}>
+const Masthead = ({ imagePath, title, subTitle, button }) =>
+  <div className="masthead" style={ imagePath && {"backgroundImage": `url(${imagePath})`} }>
     <div className="overlay"></div>
     <Container>
       <Row>
@@ -10,10 +9,7 @@ const Masthead = ({imagePath, title, subTitle, buttonProps: {href, text}}) =>
           <div className="site-heading">
             <h1>{title}</h1>
             <span className="subheading">
-              {subTitle}
-              <Link href={href}>
-                <Button color="primary" className="ml-2">{text}</Button>
-              </Link>
+              {subTitle}{button}
             </span>
           </div>
         </div>

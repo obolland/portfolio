@@ -5,8 +5,8 @@ import auth0 from '../../../../utils/auth0';
 export default async function createBlogHandler(req, res) {
   await dbConnect()
 
-const tokenCache = auth0.tokenCache(req, res);
-const { accessToken } = await tokenCache.getAccessToken();
+  const tokenCache = auth0.tokenCache(req, res);
+  const { accessToken } = await tokenCache.getAccessToken();
 
   switch (req.method) {
     case 'GET':

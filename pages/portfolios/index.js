@@ -30,7 +30,10 @@ export async function getStaticProps(context) {
 
     const res = await Portfolio.find({})
     const portfolios = JSON.parse(JSON.stringify(res))
-    return { props: { portfolios }, revalidate: 1 }
+    return { 
+        props: { portfolios },
+        revalidate: 1
+    }
 }
 
 
