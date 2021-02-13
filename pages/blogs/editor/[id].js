@@ -13,7 +13,6 @@ const BlogUpdate = ({ user, userLoading }) => {
   const router = useRouter()
   const [data, setData] = useState()
   const {id} = router.query
-  debugger
   // NextJS returns an undefined query object on first render. This ensures that fetch isn't called
   // until query id is defined.
   useEffect(() => {
@@ -74,3 +73,5 @@ const BlogUpdate = ({ user, userLoading }) => {
   )
 }
 export default WithAuth(BlogUpdate)('admin');
+
+// note - stick the get function into actions and import it

@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
-const Portfolio = mongoose.model('Portfolio');
+import Portfolio from '../../../../db/models/portfolio'
+import dbConnect from '../../../../db/mongoDBConnect';
 import auth0 from '../../../../utils/auth0';
 
 export default async function createPortfolioHandler(req, res) {
+  await dbConnect()
 
-const tokenCache = auth0.tokenCache(req, res);
-const { accessToken } = await tokenCache.getAccessToken();
+  const tokenCache = auth0.tokenCache(req, res);
+  const { accessToken } = await tokenCache.getAccessToken();
 
-if (accessToken) {
   const portfolioData = req.body;
   const portfolio = new Portfolio(portfolioData)
 
@@ -18,8 +18,5 @@ if (accessToken) {
     return res.status(error.status || 422).json(error.response.data)
 
   }
-} else {
-  return res.json({error: "You are not authorised to post on this route"})
-}
 
 }

@@ -1,5 +1,7 @@
+
+const mongoose = require('mongoose');
+const Blog = mongoose.model('Blog');
 import dbConnect from '../../../../db/mongoDBConnect';
-import Blog from '../../../../db/models/blogs';
 import auth0 from '../../../../utils/auth0';
 
 export default async function handleEditBlog(req, res) {

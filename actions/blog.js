@@ -11,6 +11,10 @@ const updateBlog = (id, data) => {
   return axios.patch(`/api/v1/blogs/${id}`, data)
 }
 
+export const deleteBlog = (id) => {
+  return axios.delete(`/api/v1/blogs/${id}`)
+}
+
 export const useCreateBlog = () => {
   return useAPIHandler(createBlog)
 }

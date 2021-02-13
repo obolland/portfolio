@@ -13,7 +13,8 @@ const Portfolios = ({ portfolios }) => {
         <BaseLayout user={data} userLoading={userLoading}>
             <BasePage
                 title="See my latest work below"
-                className="portfolio-page">
+                className="portfolio-page"
+            >
                     <PortfolioCards
                         portfolios={portfolios}
                         user={data}

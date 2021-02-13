@@ -1,5 +1,6 @@
+const mongoose = require('mongoose');
+const Portfolio = mongoose.model('Portfolio');
 import dbConnect from '../../../../db/mongoDBConnect';
-import Portfolio from '../../../../db/models/portfolio';
 import auth0 from '../../../../utils/auth0';
 
 export default async function handleEditPortfolio(req, res) {
@@ -16,17 +17,13 @@ export default async function handleEditPortfolio(req, res) {
     break
 
     case 'PUT':
-      if (accessToken) {
         const updatedFolioRes = await Portfolio
         .findOneAndUpdate({_id: id}, body, {new: true, runValidators: true}) //new:true returns the updates portfolio
         return res.json(updatedFolioRes)
-        } else { return }
     break
     case 'DELETE':
-      if (accessToken) {
         const deleteFolioRes = await Portfolio.findByIdAndDelete(id)
         return res.json({message: 'Portfolio '+id+' has been successfully deleted'})
-      } else { return }
     break
     default:
       res.status(405).end() //Method Not Allowed
