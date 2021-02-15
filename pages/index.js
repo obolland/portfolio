@@ -1,5 +1,5 @@
 import Head from 'next/head';
-
+import react, { useEffect, useState, useRef } from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
 import { getUserProfile } from '../actions/user';
 
@@ -9,15 +9,29 @@ import Typed from 'react-typed';
 const ROLES = ['Developer', 'Team Player', 'Innovator', 'Collaborator', 'Communicator', 'Creative'];
 
 const Index = () => {
-
   const { data, userLoading } = getUserProfile();
+  const trueFalse = Math.random() < 0.5;
+  const [isFlipping, setIsFlipping] = useState(trueFalse)
+  const flipInterval = useRef()
+
+
+  useEffect(() => {
+    animate();
+    return () => flipInterval && clearInterval(flipInterval.current)  //clean up interval when component is dismounted
+  }, [])
+
+  const animate = () => {
+    flipInterval.current = setInterval(() => {
+      setIsFlipping(prevIsFlipping => !prevIsFlipping)
+    }, 5000)
+  }
 
   return (
     <BaseLayout
       user={data}
       userLoading={userLoading}
       navClass="transparent"
-      className="cover">
+      className={`cover ${isFlipping ? 'cover-orange' : 'cover-blue'}`}>
       <Head>
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
       </Head>
@@ -29,8 +43,8 @@ const Index = () => {
           <Row>
             <Col md="6">
               <div className="hero-section">
-                <div className={`flipper`}>
-                  <div className="back">
+                <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
+                  <div className="front">
                     <div className="hero-section-content">
                       <h2> React.js Developer </h2>
                       <div className="hero-section-content-intro">
@@ -39,6 +53,18 @@ const Index = () => {
                     </div>
                     <img className="image" src="/images/section-1.png"/>
                     <div className="shadow-custom">
+                      <div className="shadow-inner"> </div>
+                    </div>
+                  </div>
+                  <div className="back">
+                    <div className="hero-section-content">
+                      <h2> React.js Developer </h2>
+                      <div className="hero-section-content-intro">
+                        Take a look at my portfolio and CV
+                      </div>
+                    </div>
+                    <img className="image" src="/images/section-2.png"/>
+                    <div className="shadow-custom shadow-custom-orange">
                       <div className="shadow-inner"> </div>
                     </div>
                   </div>
