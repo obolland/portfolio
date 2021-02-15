@@ -7,7 +7,7 @@ import { getUserProfile } from '../../../actions/user';
 const PortfolioId = ({ folio }) => {
 
   const { data, userLoading } = getUserProfile();
-
+  console.log(folio)
   return (
     <BaseLayout user={data} userLoading={userLoading}>
       <BasePage>
@@ -21,27 +21,21 @@ const PortfolioId = ({ folio }) => {
 
 export async function getStaticPaths() {
 
-  //Call DB
   await dbConnect()
   const res = await Portfolio.find({})
-  const parsedRes = JSON.parse(JSON.stringify(res))
 
-  // Get the paths to pre-render based on portfolios
-  const paths = parsedRes.map(portfolio => ({
+  const paths = res.map(portfolio => ({
     params: { id: portfolio._id.toString() },
   }))
 
-  // Pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
   return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {
-  // params contains the post `id` as defined in getStaticPaths.
-  // If the route is /posts/1, then params.id is 1
-  const res = await Portfolio.findById(params.id).lean()
+
+  const res = await Portfolio.findById(params.id)
   const parsedRes = JSON.parse(JSON.stringify(res))
-  // Pass post data to the page via props
+
   return { props: { folio: parsedRes } }
 }
 

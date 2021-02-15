@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Col } from 'reactstrap';
+import moment from 'moment';
 
 
 const BlogList = ({ blogs }) => {
@@ -9,7 +10,7 @@ const BlogList = ({ blogs }) => {
       <Col key={blog._id} md="10" lg="8" className="mx-auto">
           <div>
             <div className="post-preview clickable">
-                <Link href="#">
+                <Link href={`/blogs/${blog.slug}`}>
                 <a>
                     <h2 className="post-title">
                       {blog.title}
@@ -21,7 +22,7 @@ const BlogList = ({ blogs }) => {
                 </Link>
                 <p className="post-meta">Posted by
                 <a href="#"> Olly Bolland </a>
-                - {blog.createdAt}
+                - {moment(blog.createdAt).format('L')}
                 </p>
             </div>
             <hr></hr>
