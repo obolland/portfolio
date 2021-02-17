@@ -7,8 +7,10 @@ import SVG from '../components/svgComponent';
 import ScrollDown from '../components/scrollDown';
 import { Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
+import linearGradient from '../SVG-gradients/linearGradients';
 
 const ROLES = ['Developer', 'Team Player', 'Innovator', 'Collaborator', 'Communicator', 'Creative'];
+
 
 const Index = () => {
   const { data, userLoading } = getUserProfile();
@@ -106,7 +108,7 @@ const Index = () => {
       </div>
     <ScrollDown />
     </BaseLayout>
-    <SVG />
+    <SVG linearGradient={ isFlipping ? linearGradient.gradient2 : linearGradient.gradient1}/>
     <Contact />
     </>
   )
