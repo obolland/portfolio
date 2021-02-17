@@ -2,7 +2,9 @@ import Head from 'next/head';
 import react, { useEffect, useState, useRef } from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
 import { getUserProfile } from '../actions/user';
-
+import Contact from '../components/contact';
+import SVG from '../components/svgComponent';
+import ScrollDown from '../components/scrollDown';
 import { Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
 
@@ -10,8 +12,7 @@ const ROLES = ['Developer', 'Team Player', 'Innovator', 'Collaborator', 'Communi
 
 const Index = () => {
   const { data, userLoading } = getUserProfile();
-  const trueFalse = Math.random() < 0.5;
-  const [isFlipping, setIsFlipping] = useState(trueFalse)
+  const [isFlipping, setIsFlipping] = useState(false)
   const flipInterval = useRef()
 
 
@@ -23,10 +24,15 @@ const Index = () => {
   const animate = () => {
     flipInterval.current = setInterval(() => {
       setIsFlipping(prevIsFlipping => !prevIsFlipping)
-    }, 5000)
+    }, 200000000)
+  }
+
+  const flipCard = () => {
+    setIsFlipping(!isFlipping)
   }
 
   return (
+    <>
     <BaseLayout
       user={data}
       userLoading={userLoading}
@@ -39,16 +45,16 @@ const Index = () => {
         <div className="background-image">
           <img src="/images/background-index.png" />
         </div>
-        <Container>
-          <Row>
+        <Container fluid>
+          <Row >
             <Col md="6">
-              <div className="hero-section">
+              <div className="hero-section" onMouseEnter={flipCard}>
                 <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
                   <div className="front">
                     <div className="hero-section-content">
-                      <h2> React.js Developer </h2>
+                      <h2> React || NextJS </h2>
                       <div className="hero-section-content-intro">
-                        Take a look at my portfolio and CV
+                      Javascript is my langauge, React is my playground
                       </div>
                     </div>
                     <img className="image" src="/images/section-1.png"/>
@@ -58,9 +64,9 @@ const Index = () => {
                   </div>
                   <div className="back">
                     <div className="hero-section-content">
-                      <h2> React.js Developer </h2>
+                      <h2> I'm Thirsty! </h2>
                       <div className="hero-section-content-intro">
-                        Take a look at my portfolio and CV
+                        Thirsty to learn more, grow and progress as a frontend developer
                       </div>
                     </div>
                     <img className="image" src="/images/section-2.png"/>
@@ -74,8 +80,8 @@ const Index = () => {
             <Col md="6" className="hero-welcome-wrapper">
               <div className="hero-welcome-text">
                 <h1>
-                  Hi, <b>I'm Olly.</b><br />
-                  Get up to date information, collaborate and discover new projects I'm working on!
+                  <span className='fadein name'>Hi, <b>I'm Olly.</b><br /></span>
+                  <span className='fadein info'>Get up to date information, collaborate and discover new projects I'm working on!</span>
                 </h1>
               </div>
               <Typed
@@ -90,7 +96,7 @@ const Index = () => {
                   cursorChar="|"
                 />
               <div className="hero-welcome-bio">
-                <h1>
+                <h1 className='fadein work'>
                   Let's take a look at my work.
                 </h1>
               </div>
@@ -98,7 +104,11 @@ const Index = () => {
           </Row>
         </Container>
       </div>
+    <ScrollDown />
     </BaseLayout>
+    <SVG />
+    <Contact />
+    </>
   )
 }
 

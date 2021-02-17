@@ -65,7 +65,21 @@
   font-size: 3.5vh;
 }
 
+@media (max-width: 999px) and (min-width: 767px){
+  .navbar-social {
+    display: none;
+  }
+}
+
 .login {
   color: white !important;
   opacity: 1.0 !important;
+}
+
+.port-navbar.transparent.isOpen {
+  background-color: #2C3E50;
+}
+
+.port-navbar.transparent.isClosed {
+  transition: 1s;
 }

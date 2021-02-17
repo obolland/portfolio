@@ -1,0 +1,29 @@
+.contact-container {
+  width: 100%;
+  min-height: 90vh;
+  color: rgba(0, 0, 0, 0.9);
+
+  .margin-top {
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+
+  .social {
+    margin-top: 60px;
+    font-size: 80px;
+  }
+
+  #submit {
+    margin-top: 30px;
+    background-color: white;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0;
+    border-color: black;
+
+    &:hover {
+      font-size: 105%;
+    }
+  }
+}

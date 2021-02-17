@@ -1,5 +1,53 @@
 // Index -----------
 
+@mixin animation($animationType) {
+  -webkit-animation: $animationType; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: $animationType; /* Firefox < 16 */
+      -ms-animation: $animationType; /* Internet Explorer */
+       -o-animation: $animationType; /* Opera < 12.1 */
+          animation: $animationType;
+}
+
+@mixin animation-fill-mode($animationMode) {
+  -webkit-animation-fill-mode: $animationMode;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: $animationMode;
+  animation-fill-mode: $animationMode;
+}
+
+@mixin animation-delay($detail) {
+  -webkit-animation-delay: $detail;
+  -moz-animation-delay: $detail;
+  animation-delay: $detail;
+}
+
+.fadein {
+  opacity: 0;
+
+  @include animation(fadein 2s);
+  @include animation-fill-mode(forwards);
+}
+
+
+.name {
+  @include animation-delay(0.7s);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.info {
+  @include animation-delay(2.2s);
+}
+
+.work {
+  @include animation-delay(3.6s);
+  font-size: 38px;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 0.9; }
+}
+
 .cover.cover-orange {
   background-image: linear-gradient(45deg, rgb(254, 202, 83), rgb(253, 157, 97));
 }
@@ -50,6 +98,10 @@
 }
 
 .hero-section{
+  height: 422px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   h2 {
     color: white;
     font-weight: bold;
@@ -106,7 +158,14 @@
 
 }
 
-@media (max-width: 991px) {
+@media (max-width: 890px) {
+  .hero-section {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 550px) {
   .hero-section {
     width: 341px;
 
@@ -117,6 +176,18 @@
 
   .hero-welcome-text > h1 {
     margin-top: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-welcome-wrapper {
+    text-align: center;
+  }
+  .info {
+    display: none;
+  }
+  .work {
+    display: none;
   }
 }
 
