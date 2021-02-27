@@ -54,9 +54,9 @@ const Index = () => {
                 <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
                   <div className="front">
                     <div className="hero-section-content">
-                      <h2> React || NextJS </h2>
+                      <h2> Web Applications Developer </h2>
                       <div className="hero-section-content-intro">
-                      Javascript is my langauge, React is my playground
+                        <p>See my other side ➡➡➡ </p>
                       </div>
                     </div>
                     <img className="image" src="/images/section-1.png"/>
@@ -66,9 +66,9 @@ const Index = () => {
                   </div>
                   <div className="back">
                     <div className="hero-section-content">
-                      <h2> I'm Thirsty! </h2>
+                      <h2> React, NextJS, Express, MongoDB </h2>
                       <div className="hero-section-content-intro">
-                        Thirsty to learn more, grow and progress as a frontend developer
+                        Javascript is my langauge, React is my playground
                       </div>
                     </div>
                     <img className="image" src="/images/section-2.png"/>

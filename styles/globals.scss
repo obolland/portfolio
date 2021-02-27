@@ -9,9 +9,9 @@
 @import './portfolios';
 @import './blogs';
 @import './about';
-@import './contact';
-@import './scrollDown';
-
+@import './components/contact';
+@import './components/scrollDown';
+@import './components/coverFlow';
 
 html, body {
   height: 100%;

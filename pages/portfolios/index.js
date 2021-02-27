@@ -3,8 +3,7 @@ import BasePage from '../../components/basePage';
 import { getUserProfile } from '../../actions/user';
 import dbConnect from '../../db/mongoDBConnect';
 import Portfolio from '../../db/models/portfolio';
-import PortfolioCards from '../../components/portfolioCards';
-
+import CoverFlow from '../../components/coverFlow';
 
 const Portfolios = ({ portfolios }) => {
 
@@ -15,7 +14,7 @@ const Portfolios = ({ portfolios }) => {
                 title="See my latest work below"
                 className="portfolio-page"
             >
-                    <PortfolioCards
+                    <CoverFlow 
                         portfolios={portfolios}
                         user={data}
                         userLoading={userLoading}
@@ -24,6 +23,7 @@ const Portfolios = ({ portfolios }) => {
         </BaseLayout>
     )
 }
+
 
 export async function getStaticProps(context) {
     await dbConnect()
