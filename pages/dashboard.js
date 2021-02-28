@@ -1,11 +1,11 @@
-import BaseLayout from '../components/layouts/BaseLayout';
-import BasePage from '../components/basePage';
-import WithAuth from '../hoc/withAuth';
+import BaseLayout from 'components/layouts/BaseLayout';
+import BasePage from 'components/basePage';
+import WithAuth from 'hoc/withAuth';
 import { Row, Col, Button } from 'reactstrap';
 import Link from 'next/link';
-import { useUpdateBlog, deleteBlog, useGetBlogs } from '../actions/blog';
-import Masthead from '../components/shared/Masthead';
-import PortDropdown from '../components/shared/Dropdown';
+import { useUpdateBlog, deleteBlog, useGetBlogs } from 'actions/blog';
+import Masthead from 'components/shared/Masthead';
+import PortDropdown from 'components/shared/Dropdown';
 import { toast } from 'react-toastify';
 
 const Dashboard = ({user, userLoading}) => {

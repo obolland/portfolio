@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect }from 'react';
+import React, { useRef, useState }from 'react';
 import SunEditor, {buttonList} from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 

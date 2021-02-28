@@ -1,7 +1,7 @@
-import BaseLayout from '../components/layouts/BaseLayout'
-import BasePage from '../components/basePage';
+import BaseLayout from 'components/layouts/BaseLayout'
+import BasePage from 'components/basePage';
 import { Row, Col } from 'reactstrap';
-import { getUserProfile } from '../actions/user';
+import { getUserProfile } from 'actions/user';
 
 const CV = () => {
 

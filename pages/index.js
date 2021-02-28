@@ -1,13 +1,13 @@
 import Head from 'next/head';
-import react, { useEffect, useState, useRef } from 'react';
-import BaseLayout from '../components/layouts/BaseLayout';
-import { getUserProfile } from '../actions/user';
-import Contact from '../components/contact';
-import SVG from '../components/svgComponent';
-import ScrollDown from '../components/scrollDown';
+import { useEffect, useState, useRef } from 'react';
+import BaseLayout from 'components/layouts/BaseLayout';
+import { getUserProfile } from 'actions/user';
+import Contact from 'components/contact';
+import SVG from 'components/svgComponent';
+import ScrollDown from 'components/scrollDown';
 import { Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
-import linearGradient from '../SVG-gradients/linearGradients';
+import linearGradient from 'SVG-gradients/linearGradients';
 
 const ROLES = ['Developer', 'Team Player', 'Innovator', 'Collaborator', 'Communicator', 'Creative'];
 

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-
 import Link from 'next/link';
-
 import AdminMenu from './AdminMenu';
-
 import {
   Collapse,
   Navbar,

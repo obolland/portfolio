@@ -1,4 +1,3 @@
-import SVG from '../components/svgComponent';
 import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
