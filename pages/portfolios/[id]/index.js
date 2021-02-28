@@ -7,7 +7,6 @@ import { getUserProfile } from '../../../actions/user';
 const PortfolioId = ({ folio }) => {
 
   const { data, userLoading } = getUserProfile();
-  console.log(folio)
   return (
     <BaseLayout user={data} userLoading={userLoading}>
       <BasePage>

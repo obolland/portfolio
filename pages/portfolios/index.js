@@ -4,6 +4,8 @@ import { getUserProfile } from '../../actions/user';
 import dbConnect from '../../db/mongoDBConnect';
 import Portfolio from '../../db/models/portfolio';
 import CoverFlow from '../../components/coverFlow';
+import portfolioCards from '../../components/portfolioCards';
+import PortfolioCards from '../../components/portfolioCards';
 
 const Portfolios = ({ portfolios }) => {
 
@@ -15,6 +17,11 @@ const Portfolios = ({ portfolios }) => {
                 className="portfolio-page"
             >
                     <CoverFlow 
+                        portfolios={portfolios}
+                        user={data}
+                        userLoading={userLoading}
+                    />
+                    <PortfolioCards
                         portfolios={portfolios}
                         user={data}
                         userLoading={userLoading}

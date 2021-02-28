@@ -20,7 +20,7 @@ const PortfolioCards = ({portfolios, user, userLoading}) => {
   }
 
   return (
-    <Row>
+    <Row className="portfolio-cards-mobile">
       <Col md="12">
         { portfolios.map(portfolio => 
           <Link key={portfolio._id} href={`/portfolios/${portfolio._id}`}>

@@ -8,7 +8,7 @@ async function dbConnect() {
   }
 
   // note - .env file required
-  return mongoose.connect('mongodb+srv://obolland:7oquUnmVfZtmXGKb@cluster0.uahhi.mongodb.net/portfolioDB?retryWrites=true&w=majority', {
+  return mongoose.connect(process.env.DB_CONNECT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
