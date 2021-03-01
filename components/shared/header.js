@@ -10,7 +10,7 @@ import {
   NavbarText
 } from 'reactstrap';
 
-import ActiveLink from '../../components/shared/ActiveLink';
+import ActiveLink from './ActiveLink';
 
 //functions begin....
 
