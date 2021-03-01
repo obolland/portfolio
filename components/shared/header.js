@@ -12,7 +12,7 @@ import {
 
 import ActiveLink from '../../components/shared/ActiveLink';
 
-//functions begin...
+//functions begin....
 
 export const BsNavLink = ({ href, title, className='' }) => {
     return (
