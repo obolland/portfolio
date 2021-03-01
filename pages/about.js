@@ -14,23 +14,20 @@ const About = () => {
                     <Col md="6">
                         <div className="left-side">
                             <h1 className={`title fadein`}>Hello, Welcome</h1>
-                            <h4 className={`subtitle fadein`}>To my space</h4>
-                            <p className={`subsubTitle fadein`}>Feel free to read this short description about me</p>
+                            <h1 className={`subtitle fadein`}>To my space</h1>
+                            {/* <p className={`subsubTitle fadein`}>Feel free to read this short description about me</p> */}
                         </div>
                     </Col>
                     <Col md="6">
                         <div className={`fadein right-side`}>
-                            <p>My name is Olly Bolland and I am an experienced <i>enthusiastic</i> software engineer and freelance developer. </p>
+                            <p>My name is Olly and I am an <b>enthusiastic</b> web applications and freelance developer.</p>
                             <p>
-                            I have a Master's degree in Artificial Intelligence and several years of experience working
-                            on a wide range of technologies and projects from C++ development for ultrasound devices to
-                                modern mobile and web applications in React and Angular.
+                            I have several years experience with Javascript, working with a range of technologies and on various projects,
+                            from vinilla JS landing pages to modern web applications in React and NextJS.
                             </p>
                             <p>
-                            Throughout my career, I have acquired advanced technical knowledge and the ability to explain
-                            programming topics clearly and in detail to a broad audience. I invite you to take my course,
-                            where I have put a lot of effort to explain web and software engineering concepts in a detailed,
-                            hands-on and understandable way.
+                            I am <b>excited</b> to learn, <b>eager</b> to move forwards and intend to remain <b>inquisitive</b> as I progress.<br/>
+                            I can't wait to take the next step in my career and grow into the best developer I can be.
                             </p>
                         </div>
                     </Col>
