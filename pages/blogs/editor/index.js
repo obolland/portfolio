@@ -1,13 +1,14 @@
-import React, { useRef, useState }from 'react';
 import 'suneditor/dist/css/suneditor.min.css';
-import BaseLayout from '../../../components/layouts/BaseLayout';
-import BasePage from '../../../components/basePage';
-import WithAuth from '../../../hoc/withAuth';
-import { useCreateBlog } from '../../../actions/blog';
+import BaseLayout from 'components/layouts/BaseLayout';
+import BasePage from 'components/basePage';
+import WithAuth from 'hoc/withAuth';
+import { useCreateBlog } from 'actions/blog';
 import { toast } from 'react-toastify';
-import BlogEditorForm from '../../../components/blogEditorForm';
+import BlogEditorForm from 'components/blogEditorForm';
+import { useRouter } from 'next/router';
 
 const BlogEditor = ({user, userLoading}) => {
+  const Router = useRouter()
   const [createBlog, {data: createdBlog, error}] = useCreateBlog()
 
   const saveBlog = async (blogContent, form, event) => {
@@ -23,8 +24,9 @@ const BlogEditor = ({user, userLoading}) => {
         status: 'published',
         content: blogContent
       }
-      await createBlog(data)
 
+      await createBlog(data)
+      
     } else {
       const data = {
         ...form,
@@ -33,7 +35,6 @@ const BlogEditor = ({user, userLoading}) => {
       await createBlog(data)
     }
 
-    alert('blog created')  
   }
 
 

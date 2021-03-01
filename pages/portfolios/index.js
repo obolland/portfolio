@@ -1,11 +1,10 @@
-import BaseLayout from '../../components/layouts/BaseLayout';
-import BasePage from '../../components/basePage';
-import { getUserProfile } from '../../actions/user';
-import dbConnect from '../../db/mongoDBConnect';
-import Portfolio from '../../db/models/portfolio';
-import CoverFlow from '../../components/coverFlow';
-import portfolioCards from '../../components/portfolioCards';
-import PortfolioCards from '../../components/portfolioCards';
+import BaseLayout from 'components/layouts/BaseLayout';
+import BasePage from 'components/basePage';
+import { getUserProfile } from 'actions/user';
+import dbConnect from 'db/mongoDBConnect';
+import Portfolio from 'db/models/portfolio';
+import CoverFlow from 'components/coverFlow';
+import PortfolioCards from 'components/portfolioCards';
 
 const Portfolios = ({ portfolios }) => {
 

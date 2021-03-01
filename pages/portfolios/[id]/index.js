@@ -1,8 +1,8 @@
-import BaseLayout from "../../../components/layouts/BaseLayout";
-import BasePage from '../../../components/basePage';
-import dbConnect from '../../../db/mongoDBConnect';
-import Portfolio from '../../../db/models/portfolio';
-import { getUserProfile } from '../../../actions/user';
+import BaseLayout from "components/layouts/BaseLayout";
+import BasePage from 'components/basePage';
+import dbConnect from 'db/mongoDBConnect';
+import Portfolio from 'db/models/portfolio';
+import { getUserProfile } from 'actions/user';
 
 const PortfolioId = ({ folio }) => {
 

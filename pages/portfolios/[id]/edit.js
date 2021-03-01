@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import BaseLayout from '../../../components/layouts/BaseLayout';
-import BasePage from '../../../components/basePage';
-import WithAuth from '../../../hoc/withAuth';
+import BaseLayout from 'components/layouts/BaseLayout';
+import BasePage from 'components/basePage';
+import WithAuth from 'hoc/withAuth';
 import router from 'next/router';
-import PortfolioForm from '../../../components/portfolioForm';
+import PortfolioForm from 'components/portfolioForm';
 import { toast } from 'react-toastify';
 
 

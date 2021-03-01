@@ -1,11 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react';
-import BaseLayout from '../../../components/layouts/BaseLayout';
-import BasePage from '../../../components/basePage';
-import WithAuth from '../../../hoc/withAuth';
+import BaseLayout from 'components/layouts/BaseLayout';
+import BasePage from 'components/basePage';
+import WithAuth from 'hoc/withAuth';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-import BlogEditorForm from '../../../components/blogEditorForm';
-import { useUpdateBlog } from '../../../actions/blog';
+import BlogEditorForm from 'components/blogEditorForm';
+import { useUpdateBlog } from 'actions/blog';
 
 
 const BlogUpdate = ({ user, userLoading }) => {
