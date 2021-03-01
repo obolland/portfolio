@@ -85,9 +85,15 @@ const Contact = () => {
           </div>
         </div>
         <div className="row justify-content-center social">
+          <a href="https://linkedin.com/in/olly-bolland/" target="_blank" >
             <span className="iconify" id="social" data-icon="foundation:social-linkedin" data-inline="false"></span>
+          </a>
+          <a href="https://github.com/obolland/" target="_blank" >
             <span className="iconify" id="social" data-icon="foundation:social-github" data-inline="false"></span>
+          </a>
+          <a href="https://codepen.io/ollybolland/" target="_blank" >
             <span className="iconify" id="social" data-icon="ant-design:codepen-outlined" data-inline="false"></span>
+          </a>
         </div>
       </div>
     </Fade>

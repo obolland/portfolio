@@ -11,6 +11,18 @@
   .social {
     margin-top: 60px;
     font-size: 80px;
+    
+    a {
+      color: black;
+      height: 80px;
+      &:hover {
+        color:rgba(43, 46, 56, 0.9);
+      }
+
+      svg {
+        vertical-align: top;
+      }
+    }
   }
 
   #submit {
