@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
-// import Header from '../shared/Header';
-const Header = dynamic(() => import('../shared/Header'), {ssr: false});
+// import header from '../shared/Header';
+const Header = dynamic(() => import('../shared/header'), {ssr: false});
 import { ToastContainer } from 'react-toastify';
 
 const BaseLayout = ({ className, navClass="with-bg", children, user, userLoading }) => {
