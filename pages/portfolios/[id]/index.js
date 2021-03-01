@@ -32,6 +32,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 
+  await dbConnect()
   const res = await Portfolio.findById(params.id)
   const parsedRes = JSON.parse(JSON.stringify(res))
 

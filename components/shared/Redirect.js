@@ -16,5 +16,3 @@ const Redirect = ({ route, ssr }) => {
 }
 
 export default Redirect;
-
-//note - can this be removed? Replace with Link or useRouter where necessary

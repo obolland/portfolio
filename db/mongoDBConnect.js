@@ -7,7 +7,6 @@ async function dbConnect() {
     return
   }
 
-  // note - .env file required
   return mongoose.connect(process.env.DB_CONNECT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

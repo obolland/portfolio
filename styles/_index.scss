@@ -41,6 +41,13 @@
 .work {
   @include animation-delay(3.6s);
   font-size: 38px;
+    a {
+      color: white;
+      text-decoration: underline;
+      &:hover {
+        color: #dba919;
+      }
+    }
 }
 
 @keyframes fadein {

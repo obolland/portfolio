@@ -2,7 +2,7 @@ import BaseLayout from '../../components/layouts/BaseLayout';
 import BasePage from '../../components/basePage';
 import dbConnect from '../../db/mongoDBConnect';
 import Blog from '../../db/models/blogs';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser, {  } from 'react-html-parser';
 import { getUserProfile } from '../../actions/user';
 
 const BlogDetail = ({blog}) => {
@@ -33,7 +33,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await Blog.findOne({slug: params.slug}).exec()
+
+  await dbConnect()
+  const res = await Blog.findOne({slug: params.slug})
   const parsedRes = JSON.parse(JSON.stringify(res))
   return { props: {blog: parsedRes} } 
 }

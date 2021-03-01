@@ -1,4 +1,6 @@
-import Fade from 'react-reveal/Fade';
+import dynamic from 'next/dynamic'
+const Fade = dynamic(() => import('react-reveal/Fade'), {ssr: false});
+//import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
 

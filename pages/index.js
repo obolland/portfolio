@@ -8,6 +8,7 @@ import ScrollDown from 'components/scrollDown';
 import { Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
 import linearGradient from 'SVG-gradients/linearGradients';
+import Link from 'next/link';
 
 const ROLES = ['Developer', 'Team Player', 'Innovator', 'Collaborator', 'Communicator', 'Creative'];
 
@@ -56,7 +57,7 @@ const Index = () => {
                     <div className="hero-section-content">
                       <h2> Web Applications Developer </h2>
                       <div className="hero-section-content-intro">
-                        <p>See my other side ➡➡➡ </p>
+                        <p>Flip the card! ➡➡➡ </p>
                       </div>
                     </div>
                     <img className="image" src="/images/section-1.png"/>
@@ -99,7 +100,7 @@ const Index = () => {
                 />
               <div className="hero-welcome-bio">
                 <h1 className='fadein work'>
-                  Let's take a look at my work.
+                  Take a look at my <Link href='/portfolios'>work.</Link>
                 </h1>
               </div>
             </Col>

@@ -30,4 +30,3 @@ export default async function createBlogHandler(req, res) {
         break
     }
 }
-// note - display correct error when user does not have access token
