@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="row justify-content-center">
           <div className="col-12">
             <form onSubmit={onSubmit}>
-              <div className="form-group col-6 mx-auto">
+              <div className="form-group mx-auto">
                 <input
                   onChange={handleChange}
                   type="name"
@@ -58,7 +58,7 @@ const Contact = () => {
                   placeholder="name..."
                   required="required" />
               </div>
-              <div className="form-group col-6 mx-auto">
+              <div className="form-group mx-auto">
                 <input
                   onChange={handleChange}
                   type="email"
@@ -68,7 +68,7 @@ const Contact = () => {
                   placeholder="email..."
                   required="required" />
               </div>
-              <div className="form-group col-6 mx-auto">
+              <div className="form-group mx-auto">
                 <textarea
                   onChange={handleChange}
                   className="form-control"

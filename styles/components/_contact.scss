@@ -3,6 +3,17 @@
   min-height: 90vh;
   color: rgba(0, 0, 0, 0.9);
 
+  .form-group {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media only screen and (max-width: 767px) {
+    .form-group {
+      width: 90%;
+    }
+  }
+
   .margin-top {
     margin-top: 80px;
     margin-bottom: 60px;
