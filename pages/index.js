@@ -51,7 +51,7 @@ const Index = () => {
         <Container fluid>
           <Row >
             <Col md="6">
-              <div className="hero-section" onMouseEnter={flipCard}>
+              <div className="hero-section" onClick={flipCard}>
                 <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
                   <div className="front">
                     <div className="hero-section-content">

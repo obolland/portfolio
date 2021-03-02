@@ -5,14 +5,27 @@ import Portfolio from 'db/models/portfolio';
 import { getUserProfile } from 'actions/user';
 
 const PortfolioId = ({ folio }) => {
-
   const { data, userLoading } = getUserProfile();
+  const imgs = folio.detail_imgs[0].split(',')
+
   return (
     <BaseLayout user={data} userLoading={userLoading}>
-      <BasePage>
-        <h1>{folio.title}</h1>
-        <p>{folio.description}</p>
-        { folio.detail_imgs ? <img src={folio.detail_imgs[0]} /> : null }
+      <BasePage title={folio.title} className='portfolio-details'>
+        <h5 className='mb-3'>{folio.tech_stack}</h5>
+        <p className='mb-5'>{folio.description}<br/>
+          <a href={folio.project_url} target="_blank">{folio.project_url}</a>
+        </p>
+        { folio.detail_imgs &&
+        <>
+          <img src={imgs[0]} className='mb-5'/>
+          <img src={imgs[1]} className='mb-5'/>
+          <img src={imgs[2]} className='mb-5'/>
+          <img src={imgs[3]} className='mb-5'/>
+          <img src={imgs[4]} className='mb-5'/>
+          <img src={imgs[5]} className='mb-5'/>
+          <img src={imgs[6]} />
+        </>
+        }
       </BasePage>
     </BaseLayout>
   )

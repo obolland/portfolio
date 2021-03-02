@@ -6,3 +6,11 @@
   min-height: 100vh;
   padding: 150px 0 0;
 }
+
+.portfolio-details {
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black
+  }
+}
