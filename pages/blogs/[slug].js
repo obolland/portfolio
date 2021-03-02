@@ -37,7 +37,7 @@ export async function getStaticProps({ params }) {
   await dbConnect()
   const res = await Blog.findOne({slug: params.slug})
   const parsedRes = JSON.parse(JSON.stringify(res))
-  return { props: {blog: parsedRes} } 
+  return { props: {blog: parsedRes}, revalidate: 10 } 
 }
 
 export default BlogDetail;
