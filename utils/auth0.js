@@ -13,10 +13,9 @@ if (process.env.NODE_ENV === 'production') {
   clientId: 'WWV4kTpHy7f8583y2bNez2yRNI5ySL8Q',
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   scope: 'openid profile',
-  redirectUri: process.env.NODE_ENV === 'production' ? 'https://portfolio-me-tau.vercel.app/api/v1/callback' : 'http://localhost:3000/api/v1/callback',
-  postLogoutRedirectUri: process.env.NODE_ENV === 'production' ? 'https://portfolio-me-tau.vercel.app/' : 'http://localhost:3000/',
+  redirectUri: process.env.NODE_ENV === 'production' ? 'https://ollybolland.com//api/v1/callback' : 'http://localhost:3000/api/v1/callback',
+  postLogoutRedirectUri: process.env.NODE_ENV === 'production' ? 'https://ollybolland.com/' : 'http://localhost:3000/',
   session: {
-    // The secret used to encrypt the cookie.
     cookieSecret: process.env.AUTH0_COOKIE_SECRET,
     storeAccessToken: true,
     storeRefreshToken: true
