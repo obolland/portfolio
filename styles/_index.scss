@@ -104,7 +104,7 @@
   padding: 150px 0 0;
 }
 
-.hero-section{
+.hero-section {
   height: 422px;
   margin-bottom: 30px;
   margin-left: auto;
@@ -186,6 +186,10 @@
 
   .hero-welcome-text > h1 {
     margin-top: 0px;
+  }
+
+  .hero-section-content-intro {
+    font-size: unset;
   }
 }
 
