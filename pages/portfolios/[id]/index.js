@@ -23,7 +23,8 @@ const PortfolioId = ({ folio }) => {
           <img src={imgs[3]} className='mb-5'/>
           <img src={imgs[4]} className='mb-5'/>
           <img src={imgs[5]} className='mb-5'/>
-          <img src={imgs[6]} />
+          <img src={imgs[6]} className='mb-5'/>
+          <img src={imgs[7]} />
         </>
         }
       </BasePage>
