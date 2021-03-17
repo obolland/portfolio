@@ -132,6 +132,11 @@
 
     &-intro {
       font-size: 17px;
+      text-align: right;
+
+      svg {
+        font-size: 25px;
+      }
     }
   }
 }
@@ -163,15 +168,13 @@
   }
 }
 
-.hero-welcome-wrapper {
-  justify-content: flex-end;
-
-}
-
 @media (max-width: 890px) {
   .hero-section {
     margin-left: auto;
     margin-right: auto;
+  }
+  .hero-welcome-wrapper {
+    text-align: center;
   }
 }
 
@@ -193,7 +196,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .hero-welcome-wrapper {
     text-align: center;
   }

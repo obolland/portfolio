@@ -57,7 +57,7 @@ const Index = () => {
                     <div className="hero-section-content">
                       <h2> Web Applications Developer </h2>
                       <div className="hero-section-content-intro">
-                        <p>Flip the card ➡➡➡ </p>
+                        <span class="iconify" id="card-flip-click" data-icon="clarity:cursor-hand-click-line" data-inline="false"></span>
                       </div>
                     </div>
                     <img className="image" src="/images/section-1.png"/>
