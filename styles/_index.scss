@@ -126,13 +126,16 @@
   &-content {
     position: absolute;
     bottom: 20px;
-    width: 360px;
-    left: 6%;
+    padding-left: 20px;
+    padding-right: 20px;
+    //width: 360px;
+    //left: 6%;
     z-index: 1;
 
     &-intro {
       font-size: 17px;
-      text-align: right;
+      display: flex;
+      justify-content: space-between;
 
       svg {
         font-size: 25px;
