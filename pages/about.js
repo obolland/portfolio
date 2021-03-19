@@ -26,7 +26,7 @@ const About = () => {
                             from vinilla JS landing pages to modern web applications in React and NextJS.
                             </p>
                             <p>
-                            I am <b>excited</b> to learn, <b>eager</b> to move forwards and intend to remain <b>inquisitive</b> as I progress.<br/>
+                            I am <b>excited</b> to learn, <b>eager</b> to move forwards and intend on remaining <b>inquisitive</b> as I progress.<br/>
                             I can't wait to take the next step in my career and grow into the best developer I can be.
                             </p>
                         </div>
