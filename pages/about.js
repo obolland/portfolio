@@ -23,10 +23,10 @@ const About = () => {
                             <p>My name is Olly and I am an <b>enthusiastic</b> web applications and freelance developer.</p>
                             <p>
                             I have several years experience with Javascript, working with a range of technologies and on various projects,
-                            from vinilla JS landing pages to modern web applications in React and NextJS.
+                            from vinilla JS, HTML and CSS landing pages to modern web applications in React and NextJS.
                             </p>
                             <p>
-                            I am <b>excited</b> to learn, <b>eager</b> to move forwards and intend on remaining <b>inquisitive</b> as I progress.<br/>
+                            I am <b>excited</b> to learn, <b>eager</b> to move forwards and intent on remaining <b>inquisitive</b> as I progress.<br/>
                             I can't wait to take the next step in my career and grow into the best developer I can be.
                             </p>
                         </div>
