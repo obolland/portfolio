@@ -69,7 +69,7 @@ const Index = () => {
                     <div className="hero-section-content">
                       <h2> React, NextJS, Express, MongoDB </h2>
                       <div className="hero-section-content-intro">
-                        Javascript is my langauge, React is my playground
+                        Javascript is my language, React is my playground
                       </div>
                     </div>
                     <img className="image" src="/images/section-2.png"/>
